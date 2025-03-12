@@ -5,7 +5,7 @@
 }
 
 .nav-links {
-    @apply flex gap-2.5;
+    @apply flex gap-10;
 }
 
 /* Animation for hamburger */
@@ -47,4 +47,63 @@
         @apply mr-0;
     }
 }
+/* Dropdown styles */
+.profile-container {
+    position: relative;
+}
+
+/* Checkbox hidden visually but accessible */
+.profile-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #1e3a8a; /* blue-950 */
+    color: white;
+    min-width: 120px;
+    border-radius: 4px;
+    padding: 5px 0;
+}
+
+/* Desktop: Show on hover */
+@media (min-width: 768px) {
+    .profile-container:hover .dropdown {
+        display: flex;
+    }
+}
+
+/* Mobile: Show when checkbox is checked */
+.profile-checkbox:checked + label + .dropdown,
+.profile-checkbox:checked + label + button + .dropdown {
+    display: flex;
+}
+
+.dropdown-content a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #1e40af;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
