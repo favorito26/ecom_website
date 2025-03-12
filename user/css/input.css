@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+.hamburger {
+    @apply hidden cursor-pointer text-2xl p-2.5;
+}
+
+.nav-links {
+    @apply flex gap-2.5;
+}
+
+/* Animation for hamburger */
+.hamburger.active .bar:nth-child(2) {
+    @apply opacity-0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    @apply translate-y-2 rotate-45;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    @apply -translate-y-2 -rotate-45;
+}
+
+.bar {
+    @apply w-[25px] h-[3px] bg-gray-800 my-[5px] transition-all duration-300 ease-in-out;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .hamburger {
+        @apply block;
+    }
+
+    .nav-links {
+        @apply fixed -left-full top-12 gap-0 flex-col bg-white w-full text-center transition-all duration-300 p-5;
+    }
+
+    .nav-links.active {
+        @apply left-0;
+    }
+
+    .nav-links a {
+        @apply my-[5px];
+    }
+
+    .nav-right {
+        @apply mr-0;
+    }
+}
+}

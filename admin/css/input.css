@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@layer base {
+  .login {
+    @apply flex items-center justify-center md:h-[100vh] h-screen w-full;
+  }
+  nav {
+    @apply absolute;
+  }
+}
+
+@layer components {
+  main{
+    @apply flex flex-col items-center justify-center h-auto min-h-screen w-full;
+  }
+  section {
+    @apply flex flex-col md:w-2/5 gap-5 w-full shadow-md bg-white justify-center items-center rounded;
+  }
+  h1 {
+    @apply text-xl font-bold;
+  }
+  .form-login {
+    @apply flex flex-col w-full p-2;
+  }
+  .login_input{
+    @apply w-full p-2 border rounded;
+  }
+  article {
+    @apply flex flex-col gap-2 w-full;
+  }
+  .submit {
+    @apply mt-2 bg-green-500 p-3 hover:bg-green-900 hover:text-white;
+  }
+  .status.active{
+    @apply bg-yellow-500 text-black p-2 rounded
+  }
+  .status.inactive{
+    @apply bg-blue-500 text-white p-2 rounded
+  }
+  .edit{
+    @apply bg-green-500 text-black p-2 rounded
+  }
+  .delete{
+    @apply bg-red-500 text-white p-2 rounded
+  }
+}
