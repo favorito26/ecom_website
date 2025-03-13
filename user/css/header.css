@@ -1,0 +1,107 @@
+.hamburger {
+    @apply hidden cursor-pointer text-2xl p-2.5;
+}
+
+.nav-links {
+    @apply flex gap-10;
+}
+
+/* Animation for hamburger */
+.hamburger.active .bar:nth-child(2) {
+    @apply opacity-0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    @apply translate-y-2 rotate-45;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    @apply -translate-y-2 -rotate-45;
+}
+
+.bar {
+    @apply w-[25px] h-[3px] bg-gray-800 my-[5px] transition-all duration-300 ease-in-out;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .hamburger {
+        @apply block;
+    }
+
+    .nav-links {
+        @apply fixed -left-full top-12 gap-0 flex-col bg-white w-full text-center transition-all duration-300 p-5;
+    }
+
+    .nav-links.active {
+        @apply left-0;
+    }
+
+    .nav-links a {
+        @apply my-[5px];
+    }
+
+    .nav-right {
+        @apply mr-0;
+    }
+}
+/* Dropdown styles */
+.profile-container {
+    position: relative;
+}
+
+/* Checkbox hidden visually but accessible */
+.profile-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #1e3a8a; /* blue-950 */
+    color: white;
+    min-width: 120px;
+    border-radius: 4px;
+    padding: 5px 0;
+}
+
+/* Desktop: Show on hover */
+@media (min-width: 768px) {
+    .profile-container:hover .dropdown {
+        display: flex;
+    }
+}
+
+/* Mobile: Show when checkbox is checked */
+.profile-checkbox:checked + label + .dropdown,
+.profile-checkbox:checked + label + button + .dropdown {
+    display: flex;
+}
+
+.dropdown-content a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #1e40af;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

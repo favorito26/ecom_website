@@ -1,0 +1,24 @@
+.card{
+    @apply md:w-64 h-auto max-w-sm bg-white rounded shadow-sm;
+}
+.card h5{
+    @apply md:text-xl text-sm font-semibold tracking-tight text-gray-900
+}
+.card img{
+    @apply w-full object-contain rounded-t-md
+}
+.card span{
+    @apply text-lg font-semibold tracking-tight text-gray-900
+}
+.btn-cart{
+    @apply text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-xs text-center md:p-2 p-1
+}
+.card article{
+    @apply flex md:flex-row flex-col items-center justify-between gap-2 border-t-gray-300 border-2 border-dashed border-x-0 border-b-0 p-2
+}
+.cards{
+    @apply grid md:grid-cols-6 grid-cols-3 md:gap-0 gap-2
+}
+h1{
+    @apply text-xl
+}

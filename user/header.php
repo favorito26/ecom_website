@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/output.css">
     <title>Dashboard</title>
-    <style>
-        /* Hamburger menu styles */
-      
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-gray-800">
-    <nav class="bg-white h-12 w-full flex justify-between items-center z-20 fixed top-0">
+
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-md h-12 w-full flex justify-between items-center z-20 fixed top-0">
         <h1 class="ml-4 md:ml-28">Best Store</h1>
-        
+
         <!-- Hamburger Button -->
         <div class="hamburger mr-4 md:hidden">
             <div class="bar"></div>
@@ -23,30 +21,29 @@
         </div>
 
         <!-- Navigation Links -->
-        <div class="nav-links">
+        <div class="nav-links shadow-md md:shadow-none">
             <a class="hover:text-gray-600" href="home.php">HOME</a>
             <a class="hover:text-gray-600" href="home.php">PRODUCTS</a>
             <a class="hover:text-gray-600" href="home.php">ABOUT</a>
-        <div class="nav-right md:hidden flex mr-10 gap-5 text-center items-center justify-center">
-            <a href="logout.php" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-right-from-bracket"></i></a>
-            <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="profile.php" class="text-gray-700 hover:text-gray-900 font-bold"><i class="fa-solid fa-user"></i></a>
-        </div>
-        </div>
-
-        <!-- Right side icons -->
-        <div class="nav-right mr-10 hidden md:flex gap-5">
-    <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
-    <div class="profile-container">
-        <button class="text-gray-700 hover:text-gray-900 font-bold cursor-pointer"><i class="fa-solid fa-user"></i></button>
-        <div class="dropdown flex-col bg-blue-950 text-white">
-            <div class="dropdown-content">
-                <a href="profile.php">Profile</a>
-                <a href="logout.php">Logout</a>
+            <div class="nav-right md:hidden flex mr-10 gap-5 text-center items-center justify-center">
+                <a href="logout.php" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="profile.php" class="text-gray-700 hover:text-gray-900 font-bold"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
-    </div>
-</div>
+
+        <div class="nav-right mr-10 hidden md:flex gap-5">
+            <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="profile-container">
+                <button class="text-gray-700 hover:text-gray-900 font-bold cursor-pointer"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown flex-col bg-blue-950 text-white">
+                    <div class="dropdown-content">
+                        <a href="profile.php">Profile</a>
+                        <a href="logout.php">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </nav>
 
@@ -68,5 +65,3 @@
             });
         });
     </script>
-</body>
-</html>
