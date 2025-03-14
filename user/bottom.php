@@ -1,4 +1,9 @@
-<footer class="flex md:flex-row flex-col justify-between md:items-center bg-blue-100">
+
+
+
+
+<footer class="bottom-0 w-full">
+<div class="flex md:flex-row flex-col justify-between md:items-center bg-blue-100 bottom-0   ">
     <div class="email-us m-10 flex flex-col gap-4">
     <h1 class="text-5xl">BEST STORE</h1>
     <p class="text-xl">subscribe to our email alerts</p>
@@ -13,8 +18,5 @@
             <li><i class="fa-solid fa-envelope"></i><a href="#" class="hover:text-gray-400"> abc123@gmail.com</a></li>
         </ul>
     </div>
-</footer>
-
 </div>
-</body>
-</html>
+</footer>

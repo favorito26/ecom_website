@@ -1,3 +1,5 @@
+<?php include 'connection.inc.php'?>
+<?php include 'functions.inc.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,8 +24,8 @@
 
         <!-- Navigation Links -->
         <div class="nav-links shadow-md md:shadow-none">
-            <a class="hover:text-gray-600" href="home.php">HOME</a>
-            <a class="hover:text-gray-600" href="home.php">PRODUCTS</a>
+            <a class="hover:text-gray-600" href="index.php">HOME</a>
+            <a class="hover:text-gray-600" href="products.php">PRODUCTS</a>
             <a class="hover:text-gray-600" href="home.php">ABOUT</a>
             <div class="nav-right md:hidden flex mr-10 gap-5 text-center items-center justify-center">
                 <a href="logout.php" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-right-from-bracket"></i></a>

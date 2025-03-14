@@ -1,3 +1,4 @@
 @import 'tailwindcss';
 @import './home.css';
-@import './header.css'
+@import './header.css';
+@import './products.css';

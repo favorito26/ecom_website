@@ -13,6 +13,7 @@
     --color-gray-100: oklch(0.967 0.003 264.542);
     --color-gray-300: oklch(0.872 0.01 258.338);
     --color-gray-400: oklch(0.707 0.022 261.325);
+    --color-gray-500: oklch(0.551 0.027 264.364);
     --color-gray-600: oklch(0.446 0.03 256.802);
     --color-gray-700: oklch(0.373 0.034 259.733);
     --color-gray-800: oklch(0.278 0.033 256.848);
@@ -214,6 +215,9 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
   .z-20 {
     z-index: 20;
   }
@@ -222,6 +226,15 @@
   }
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
+  }
+  .my-10 {
+    margin-block: calc(var(--spacing) * 10);
+  }
+  .my-14 {
+    margin-block: calc(var(--spacing) * 14);
+  }
+  .my-16 {
+    margin-block: calc(var(--spacing) * 16);
   }
   .my-20 {
     margin-block: calc(var(--spacing) * 20);
@@ -234,6 +247,9 @@
   }
   .mr-10 {
     margin-right: calc(var(--spacing) * 10);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
   }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
@@ -252,6 +268,12 @@
   }
   .h-full {
     height: 100%;
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .w-60 {
+    width: calc(var(--spacing) * 60);
   }
   .w-full {
     width: 100%;
@@ -308,6 +330,9 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
   .text-center {
     text-align: center;
   }
@@ -330,6 +355,9 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
   }
   .text-gray-700 {
     color: var(--color-gray-700);
@@ -499,10 +527,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: calc(var(--spacing) * 2);
   @media (width >= 48rem) {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-  @media (width >= 48rem) {
-    gap: calc(var(--spacing) * 0);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 h1 {
@@ -622,6 +647,46 @@ h1 {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+.products .cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 2);
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  @media (width >= 48rem) {
+    column-gap: calc(var(--spacing) * 0);
+  }
+  @media (width >= 48rem) {
+    row-gap: calc(var(--spacing) * 2);
+  }
+}
+.products .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 2);
+  @media (width >= 48rem) {
+    width: calc(var(--spacing) * 72);
+  }
+}
+.products .card a {
+  @media (width >= 48rem) {
+    height: 100%;
+  }
+  @media (width >= 48rem) {
+    width: 100%;
+  }
+}
+.products .card img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  @media (width >= 48rem) {
+    height: calc(var(--spacing) * 72);
+  }
 }
 @property --tw-border-style {
   syntax: "*";

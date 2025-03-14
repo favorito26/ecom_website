@@ -1,0 +1,14 @@
+.products .cards{
+    @apply grid md:grid-cols-4 grid-cols-2 md:gap-x-0 md:gap-y-2 gap-2
+}
+
+.products .card{
+    @apply flex flex-col items-center justify-between gap-2 md:w-72
+}
+.products .card a{
+    @apply md:w-full md:h-full
+}
+
+.products .card img{
+    @apply w-full md:h-72 object-cover rounded-md
+}

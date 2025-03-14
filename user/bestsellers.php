@@ -3,7 +3,7 @@
         <div class="cards">
         <div class="card">
             <a href="#">
-                <img src="../media/product/1594577092_Screenshot (8).png" alt="product image" />
+                <img src="../media/product/8095120040_download.jpeg" alt="product image" />
             </a>
             <div class="md:px-5 md:pb-5">
                 <a href="#">
@@ -17,7 +17,7 @@
         </div>
         <div class="card">
             <a href="#">
-                <img src="../media/product/1594577092_Screenshot (8).png" alt="product image" />
+                <img src="../media/product/8095120040_download.jpeg" alt="product image" />
             </a>
             <div class="md:px-5 md:pb-5">
                 <a href="#">
@@ -31,7 +31,7 @@
         </div>
         <div class="card">
             <a href="#">
-                <img src="../media/product/1594577092_Screenshot (8).png" alt="product image" />
+                <img src="../media/product/8095120040_download.jpeg" alt="product image" />
             </a>
             <div class="md:px-5 md:pb-5">
                 <a href="#">
@@ -45,7 +45,7 @@
         </div>
         <div class="card">
             <a href="#">
-                <img src="../media/product/1594577092_Screenshot (8).png" alt="product image" />
+                <img src="../media/product/8095120040_download.jpeg" alt="product image" />
             </a>
             <div class="md:px-5 md:pb-5">
                 <a href="#">
@@ -59,7 +59,7 @@
         </div>
         <div class="card">
             <a href="#">
-                <img src="../media/product/1594577092_Screenshot (8).png" alt="product image" />
+                <img src="../media/product/8095120040_download.jpeg" alt="product image" />
             </a>
             <div class="md:px-5 md:pb-5">
                 <a href="#">
@@ -73,7 +73,7 @@
         </div>
         <div class="card">
             <a href="#">
-                <img src="../media/product/1594577092_Screenshot (8).png" alt="product image" />
+                <img src="../media/product/8095120040_download.jpeg" alt="product image" />
             </a>
             <div class="md:px-5 md:pb-5">
                 <a href="#">
