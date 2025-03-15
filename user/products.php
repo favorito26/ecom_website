@@ -1,8 +1,20 @@
 <?php 
 include 'header.php';
+
 $cat_id = isset($_GET['id']) ? mysqli_real_escape_string($conn, $_GET['id']) : '';
 
-// Fetch categories from the database
+// Validate category ID
+if (!empty($cat_id)) {
+    $check_sql = "SELECT id FROM categories WHERE id = '$cat_id'";
+    $check_result = mysqli_query($conn, $check_sql);
+
+    if (mysqli_num_rows($check_result) == 0) {
+        header("Location: index.php");
+        exit();
+    }
+}
+
+$get_product = get_product($conn, '', $cat_id);
 $sql = "SELECT * FROM categories";
 $result = mysqli_query($conn, $sql);
 ?>
@@ -20,21 +32,20 @@ $result = mysqli_query($conn, $sql);
 
     <div class="cards">
         <?php
-        $get_product = get_product($conn, '', $cat_id);
         if (!empty($get_product)) {
             foreach ($get_product as $list) {
         ?>
                 <div class="card">
-                    <a href="#">
+                    <a href="product.php?id=<?php echo $list['id']?>">
                         <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image']; ?>" alt="product image" />
                     </a>
                     <div class="md:px-5 md:pb-5">
-                        <a href="#">
+                        <a href="product.php?id=<?php echo $list['id']?>">
                             <h5><?php echo $list['name']; ?></h5>
                         </a>
                         <article>
                             <span><?php echo $list['price']; ?></span>
-                            <a href="#" class="btn-cart">Add to cart</a>
+                            <a href="product.php?id=<?php echo $list['id']?>" class="btn-cart">Add to cart</a>
                         </article>
                     </div>
                 </div>

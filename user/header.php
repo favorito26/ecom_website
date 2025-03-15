@@ -26,7 +26,7 @@
         <div class="nav-links shadow-md md:shadow-none">
             <a class="hover:text-gray-600" href="index.php">HOME</a>
             <a class="hover:text-gray-600" href="products.php">PRODUCTS</a>
-            <a class="hover:text-gray-600" href="home.php">ABOUT</a>
+            <a class="hover:text-gray-600" href="contact.php">Contact Us</a>
             <div class="nav-right md:hidden flex mr-10 gap-5 text-center items-center justify-center">
                 <a href="logout.php" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-right-from-bracket"></i></a>
                 <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -37,13 +37,14 @@
         <div class="nav-right mr-10 hidden md:flex gap-5">
             <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
             <div class="profile-container">
-                <button class="text-gray-700 hover:text-gray-900 font-bold cursor-pointer"><i class="fa-solid fa-user"></i></button>
-                <div class="dropdown flex-col bg-blue-950 text-white">
+                <a href="login.php">Login/register</a>
+                <!-- <button class="text-gray-700 hover:text-gray-900 font-bold cursor-pointer"><i class="fa-solid fa-user"></i></button> -->
+                <!-- <div class="dropdown flex-col bg-blue-950 text-white">
                     <div class="dropdown-content">
                         <a href="profile.php">Profile</a>
                         <a href="logout.php">Logout</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
