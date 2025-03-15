@@ -1,4 +1,6 @@
-<?php include 'header.php'?>
+<?php include 'header.php'
+
+?>
 <main class="md:mx-40 mx-2 min-h-screen login ">
 <section>
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
