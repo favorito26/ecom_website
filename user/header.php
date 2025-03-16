@@ -1,4 +1,5 @@
-<?php include 'connection.inc.php' ?>
+<?php session_start();
+include 'connection.inc.php' ?>
 <?php include 'functions.inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +39,17 @@
         <div class="nav-right mr-10 hidden md:flex gap-5">
             <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
             <div class="profile-container">
-                <a href="login.php">Login/register</a>
-                <!-- <button class="text-gray-700 hover:text-gray-900 font-bold cursor-pointer"><i class="fa-solid fa-user"></i></button> -->
-                <!-- <div class="dropdown flex-col bg-blue-950 text-white">
-                    <div class="dropdown-content">
-                        <a href="profile.php">Profile</a>
-                        <a href="logout.php">Logout</a>
+                <?php if (isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes') { ?>
+                    <button class="text-gray-700 hover:text-gray-900 font-bold cursor-pointer"><i class="fa-solid fa-user"></i></button>
+                    <div class="dropdown flex-col bg-blue-950 text-white">
+                        <div class="dropdown-content">
+                            <a href="profile.php">Profile</a>
+                            <a href="logout.php">Logout</a>
+                        </div>
                     </div>
-                </div> -->
+                <?php } else { ?>
+                    <a href="login.php">Login/register</a>
+                <?php } ?>
             </div>
         </div>
 

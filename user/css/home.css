@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 .card{
     @apply md:w-64 h-auto max-w-sm bg-white rounded shadow-sm;
 }
@@ -17,7 +19,7 @@
     @apply flex md:flex-row flex-col items-center justify-between gap-2 border-t-gray-300 border-2 border-dashed border-x-0 border-b-0 p-2
 }
 .cards{
-    @apply grid md:grid-cols-4 grid-cols-3 gap-2
+    @apply grid md:grid-cols-4 grid-cols-3 gap-x-24 gap-y-2
 }
 h1{
     @apply text-xl

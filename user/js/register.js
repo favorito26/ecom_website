@@ -37,3 +37,33 @@ function user_register(){
         });
     }
 }
+
+
+function user_login(){
+    var email = $("#login_email").val();
+    var password = $("#login_password").val();
+
+    if(email == ""){
+        alert("Please enter the email");
+        return;
+    }
+    else if(password == ""){
+        alert("Please enter the password");
+        return;
+    }
+    else{
+        $.ajax({
+            url: 'login_submit.php',
+            type: 'POST',
+            data: 'email=' + email + '&password=' + password,
+            success: function(result){
+                if(result == 'wrong'){
+                    $("#form-message").html('<div class="text-red-600 font-medium">Invalid email or password</div>');
+                }
+                if(result == 'right'){
+                    window.location.href = "index.php";
+                }
+            }
+        });
+    }
+}
