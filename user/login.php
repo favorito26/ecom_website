@@ -31,6 +31,7 @@
                   <p class="text-sm font-light text-gray-500 ">
                       Don’t have an account yet? <a href="signup.php" class="font-medium text-primary-600 hover:underline">Sign up</a>
                   </p>
+                  <div id="form-message"></div>
               </form>
           </div>
       </div>

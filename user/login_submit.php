@@ -7,7 +7,7 @@ include 'functions.inc.php';
 $email = get_safe_value($conn, $_POST['email']);
 $password = get_safe_value($conn, $_POST['password']);
 
-$res = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
+$res = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
 $check_user = mysqli_num_rows($res);
 
 if ($check_user > 0) {

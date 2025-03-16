@@ -19,6 +19,12 @@ $get_product = get_product($conn, '', '', $product_id);
             <p class="text-gray-600  mb-5">
                 Category: <a href="products.php?id=<?php echo $get_product['0']['categories_id']?>"><?php echo $get_product['0']['categories']?></a>
             </p>
+            <p>Qty:</p>
+            <select class="bg-gray-200 p-2 rounded" name="qty" id="qty">
+                <?php for ($i=1; $i <= $get_product['0']['qty']; $i++) {?>
+                    <option value="<?php echo $i?>"><?php echo $i?></option>
+                <?php }?>
+            </select>
             <a href="product.php?id=<?php echo $list['id']?>" class="btn-cart w-28">Add to cart</a>
         </div>
     </section>
