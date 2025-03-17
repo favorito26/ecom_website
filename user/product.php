@@ -25,7 +25,7 @@ $get_product = get_product($conn, '', '', $product_id);
                     <option value="<?php echo $i?>"><?php echo $i?></option>
                 <?php }?>
             </select>
-            <a href="product.php?id=<?php echo $list['id']?>" class="btn-cart w-28">Add to cart</a>
+            <a href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['id']?>','add')" class="btn-cart w-28">Add to cart</a>
         </div>
     </section>
     <section class="flex flex-col mt-10">

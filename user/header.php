@@ -1,6 +1,10 @@
 <?php session_start();
-include 'connection.inc.php' ?>
-<?php include 'functions.inc.php' ?>
+include 'connection.inc.php';
+include 'functions.inc.php';
+include 'add_to_cart.php';
+$obj = new add_to_cart();
+$total_product=$obj->total_product();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +41,7 @@ include 'connection.inc.php' ?>
         </div>
 
         <div class="nav-right mr-10 hidden md:flex gap-5">
-            <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart.php" class="text-gray-700 hover:text-gray-900"><span class="bg-red cart_count"><?php echo $total_product;?></span><i class="fa-solid fa-cart-shopping"></i></a>
             <div class="profile-container">
                 <?php if (isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes') { ?>
                     <button class="text-gray-700 hover:text-gray-900 font-bold cursor-pointer"><i class="fa-solid fa-user"></i></button>
@@ -73,3 +77,4 @@ include 'connection.inc.php' ?>
             });
         });
     </script>
+    <script src="js/addtocart.js"></script>
