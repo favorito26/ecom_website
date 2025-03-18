@@ -69,6 +69,10 @@ include 'header.php';
         <?php }?>
         </tbody>
     </table>
+    <div class="flex justify-between mt-10">
+            <a href="<?php echo SITE_PATH;?>" class="p-4 bg-gray-300">Continue shopping</a>
+            <a href="<?php echo SITE_PATH;?>checkout.php" class="p-4 bg-gray-300">Checkout</a>
+    </div>
 </div>
 
 </main>
