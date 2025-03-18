@@ -16,6 +16,9 @@ include 'header.php';
                     Product name
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    MRP
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Price
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -30,21 +33,40 @@ include 'header.php';
             </tr>
         </thead>
         <tbody>
+            <?php  
+                foreach ($_SESSION['cart'] as $key => $value) {
+                    $productArray=get_product($conn, '', '', $key);
+                    $pname=$productArray[0]['name'];
+                    $mrp=$productArray[0]['mrp'];
+                    $price=$productArray[0]['price'];
+                    $image=$productArray[0]['image'];
+                    $qty=$value['qty'];
+            ?>
             <tr class="bg-white border-b  border-gray-200">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
+                <td scope="row" class="px-6 py-4">
+                    <img class="w-36 h-36" src="<?php echo PRODUCT_IMAGE_SITE_PATH.$image?>" alt="">
                 </td>
                 <td class="px-6 py-4">
-                    Laptop
+                     <?php echo $pname?>
                 </td>
                 <td class="px-6 py-4">
-                    $2999
+                    $<?php echo $mrp?>
+                </td>
+                <td class="px-6 py-4">
+                    $<?php echo $price?>
+                </td>
+                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                    <input class="bg-gray-100 mt-10" type="number" id="<?php echo $key ?>qty" value="<?php echo $qty?>">
+                    <a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','update')">Update</a>
+                </td>
+                <td class="px-6 py-4">
+                    $<?php echo $qty*$price?>
+                </td>
+                <td class="px-6 py-4">
+                    <a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','remove')">Remove</a>
                 </td>
             </tr>
-         
+        <?php }?>
         </tbody>
     </table>
 </div>

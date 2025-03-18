@@ -13,5 +13,12 @@ $obj = new add_to_cart();
 if ($type == 'add') {
     $obj->add_product($pid, $qty);
 }
+if ($type == 'remove') {
+    $obj->remove_product($pid);
+}
+if ($type == 'update') {
+    $obj->update_product($pid, $qty);
+}
+
 echo $obj->total_product();
 ?>
