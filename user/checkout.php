@@ -3,6 +3,11 @@ if (!isset($_SESSION['USER_LOGIN']) || $_SESSION['USER_LOGIN'] !== 'yes') {
     header('location: login.php');
     exit();
 }
+if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
+   ?> 
+   <script>window.location.href='index.php'</script>
+   <?php
+}
 ?>
 
 <main class="mt-20 md:mx-40 mx-2 min-h-screen">
@@ -114,6 +119,15 @@ if (!isset($_SESSION['USER_LOGIN']) || $_SESSION['USER_LOGIN'] !== 'yes') {
                 <input type="text" class="checkout-input">
             </div>
         </div>
+    </section>
+    <hr class="mt-6 border-b-1 border-blueGray-300">
+
+    <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+        Payment Options
+    </h6>
+    <section class="flex flex-col flex-wrap">
+                   <div class="flex items-center gap-10">COD(Cash on delivery) <input type="radio" name="payment_type" id="cod" value="COD"></div>
+                   <div class="flex items-center gap-10">PayU <input type="radio" name="payment_type" id="payu" value="payu"></div>
     </section>
 </main>
 
