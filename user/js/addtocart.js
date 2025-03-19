@@ -11,7 +11,7 @@ function manage_cart(pid, type) {
         data: 'pid=' + pid + '&qty=' + qty + '&type=' + type,
         success: function(result) {
             if(type=='update' || type=='remove'){
-                window.location.href='cart.php';
+                window.location.href=window.location.href;
             }
             $('.cart_count').html(result);
         }

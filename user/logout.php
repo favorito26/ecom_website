@@ -1,6 +1,8 @@
 <?php
-session_start();
-session_destroy();
+session_start(); // Start the session to access session variables
+unset($_SESSION['USER_LOGIN']);
+unset($_SESSION['USER_ID']);
+unset($_SESSION['USER_NAME']);
 header("Location: index.php");
-exit();
+exit(); // Ensure script execution stops after redirection
 ?>

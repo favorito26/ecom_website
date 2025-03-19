@@ -35,7 +35,7 @@ $total_product=$obj->total_product();
             <a class="hover:text-gray-600" href="contact.php">Contact Us</a>
             <div class="nav-right md:hidden flex mr-10 gap-5 text-center items-center justify-center">
                 <a href="logout.php" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-right-from-bracket"></i></a>
-                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="cart.php" class="text-gray-700 hover:text-gray-900"><span class="bg-red cart_count"><?php echo $total_product;?></span><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="profile.php" class="text-gray-700 hover:text-gray-900 font-bold"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
