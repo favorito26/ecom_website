@@ -8,6 +8,43 @@ if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
    <script>window.location.href='index.php'</script>
    <?php
 }
+
+$grandtotal = 0;  
+foreach ($_SESSION['cart'] as $key => $value) {
+    $productArray=get_product($conn,'','',$key);
+    $price=$productArray[0]['price'];
+    $qty=$value['qty'];
+    $grandtotal += $qty*$price;
+}
+
+if(isset($_POST['submit'])){
+    $address = get_safe_value($conn, $_POST['address']);
+    $city = get_safe_value($conn, $_POST['city']);
+    $pincode = get_safe_value($conn, $_POST['pincode']);
+    $payment_type = get_safe_value($conn, $_POST['payment_type']);
+    $userid = $_SESSION['USER_ID'];
+    $payment_status = 'pending';
+    if($payment_type == 'COD'){
+        $payment_status='success';
+    }
+    $order_status = 'pending';
+    $added_on = date('Y-m-d h:i:s');
+    mysqli_query($conn, "INSERT INTO orders(user_id, address, city, pincode, payment_type, total_price, payment_status, order_status, added_on) VALUES('$userid', '$address', '$city', '$pincode', '$payment_type', '$grandtotal', '$payment_status',  '$order_status', '$added_on')");
+    $order_id = mysqli_insert_id($conn);
+    foreach ($_SESSION['cart'] as $key => $value) {
+        $productArray=get_product($conn,'','',$key);
+        $price=$productArray[0]['price'];
+        $qty=$value['qty'];
+        $grandtotal += $qty*$price;
+
+        mysqli_query($conn, "INSERT INTO order_detail(order_id,product_id,qty,price) VALUES('$order_id', '$key', '$qty', '$price')");
+    }
+    unset($_SESSION['cart']);
+    ?>
+    <script>window.location.href='thank_you.php'</script>
+    <?php
+
+}
 ?>
 
 <main class="mt-20 md:mx-40 mx-2 min-h-screen">
@@ -90,7 +127,7 @@ if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
         <h1 class="mr-20">$<?php echo $grandtotal?></h1>
     </div>
     <hr class="mt-6 border-b-1 border-blueGray-300">
-
+<form action="" method="post">
     <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
         Address Information
     </h6>
@@ -100,7 +137,7 @@ if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2">
                     Address
                 </label>
-                <input type="text" class="checkout-input">
+                <input type="text" name="address" class="checkout-input">
             </div>
         </div>
         <div class="w-full lg:w-4/12 px-4">
@@ -108,7 +145,7 @@ if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2">
                     City/state
                 </label>
-                <input type="email" class="checkout-input">
+                <input type="text" name="city" class="checkout-input">
             </div>
         </div>
         <div class="w-full lg:w-4/12 px-4">
@@ -116,7 +153,7 @@ if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2">
                     Postal Code
                 </label>
-                <input type="text" class="checkout-input">
+                <input type="text" name="pincode" class="checkout-input">
             </div>
         </div>
     </section>
@@ -129,6 +166,8 @@ if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0){
                    <div class="flex items-center gap-10">COD(Cash on delivery) <input type="radio" name="payment_type" id="cod" value="COD"></div>
                    <div class="flex items-center gap-10">PayU <input type="radio" name="payment_type" id="payu" value="payu"></div>
     </section>
+    <input type="submit" name="submit" class="btn">
+    </form>
 </main>
 
 <?php include 'bottom.php'; ?>
