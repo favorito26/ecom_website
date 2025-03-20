@@ -32,7 +32,7 @@
                 while ($row = mysqli_fetch_assoc($res)) {?>
                 <tr>
                     <td class="px-6 py-3">
-                        <?php echo $row['id']?>
+                        <a class="bg-black px-10 py-3 mt-2 text-center hover:bg-gray-700 text-white m-2" href="order_details.php?id=<?php echo $row['id']?>"><?php echo $row['id']?></a>
                     </td>
                     <td class="px-6 py-3"> 
                         <?php echo $row['added_on']?>
