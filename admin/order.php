@@ -1,9 +1,11 @@
-<?php include 'header.php'; ?>
+<?php require('top.inc.php');
 
-<main class="mt-20 md:mx-40 mx-2 min-h-screen">
-    <div class="relative overflow-x-auto">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
+?>
+<main>
+    <h4 class= "mb-2 bg-white w-auto font-bold text-2xl text-center">Orders</h4>
+
+    <table class="h-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
                         Order ID
@@ -28,11 +30,11 @@
             <tbody>
                 <?php  
                 $uid = $_SESSION['USER_ID'];
-                $res = mysqli_query($conn, "select orders.*,order_status.name as order_status_str from orders,order_status where orders.user_id = '$uid' and order_status.id=orders.order_status");
+                $res = mysqli_query($conn, "select orders.*,order_status.name as order_status_str from orders,order_status where order_status.id=orders.order_status");
                 while ($row = mysqli_fetch_assoc($res)) {?>
                 <tr>
                     <td class="px-6 py-3">
-                        <a class="bg-black px-10 py-3 mt-2 text-center hover:bg-gray-700 text-white m-2" href="order_details.php?id=<?php echo $row['id']?>"><?php echo $row['id']?></a>
+                        <a class="bg-black px-10 py-3 mt-2 text-center hover:bg-gray-700 text-white m-2" href="order_details_master.php?id=<?php echo $row['id']?>"><?php echo $row['id']?></a>
                     </td>
                     <td class="px-6 py-3"> 
                         <?php echo $row['added_on']?>
@@ -53,8 +55,8 @@
                 <?php }?>
             </tbody>
         </table>
-    </div>
+
+
 </main>
 
-
-<?php include 'bottom.php'; ?>
+<?php require('bottom.inc.php') ?>  
